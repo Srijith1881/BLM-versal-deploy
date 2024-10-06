@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from "./pages/Home"
+import Home from "./Pages/Home"
 import Weblayout from "./layouts/Weblayout"
 import Employeelogin from "./components/Employeelogin";
 import Patientlogin from "./components/Patientlogin";
-import Patientdashboard from"./pages/Patientdashboard";
-import Employeedashboard from"./pages/Employeedashboard";
+import Patientdashboard from"./Pages/Patientdashboard";
+import Employeedashboard from"./Pages/Employeedashboard";
 
 const App=() => {
 
