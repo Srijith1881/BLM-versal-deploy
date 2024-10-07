@@ -17,7 +17,10 @@ const Employeedashboard = () => {
     
   useEffect(() => {
     axios
-      .get('https://blood-report-server.onrender.com/api/blood-request')
+      .get('https://blood-report-server.onrender.com/api/blood-request',{
+        withCredentials: true
+
+      })
       .then((response) => {
         console.log('Data fetched:', response.data.patients); 
         setRequests(response.data.patients);
