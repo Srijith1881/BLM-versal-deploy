@@ -17,7 +17,7 @@ const Employeedashboard = () => {
     
   useEffect(() => {
     axios
-      .get('https://blood-report-server.onrender.com')
+      .get('https://blood-report-server.onrender.com/api/blood-request')
       .then((response) => {
         console.log('Data fetched:', response.data.patients); 
         setRequests(response.data.patients);
@@ -44,7 +44,7 @@ const Employeedashboard = () => {
     }
   };
 
-  // rejecting a blood request
+  // Function to handle rejecting a blood request
   const handleReject = (id) => {
     axios.put(`http://localhost:3333/api/update/${id}`, { status: 'rejected' }) 
       .then(() => {
