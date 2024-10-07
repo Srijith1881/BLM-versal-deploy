@@ -58,6 +58,7 @@ const Employeedashboard = () => {
               <th className="border px-4 py-2">Location</th>
               <th className="border px-4 py-2">Age</th>
               <th className="border px-4 py-2">Blood Group</th>
+              <th className="border px-4 py-2">Gender</th>
               <th className="border px-4 py-2">Actions</th>
             </tr>
           </thead>
@@ -68,7 +69,8 @@ const Employeedashboard = () => {
                 <td className="border px-4 py-2">{request.emergency ? 'Yes' : 'No'}</td>
                 <td className="border px-4 py-2">{request.location}</td>
                 <td className="border px-4 py-2">{request.age}</td>
-                <td className="border px-4 py-2">{request.bloodgroup}</td>
+                <td className="border px-4 py-2">{request.bloodGroup}</td>
+                <td className="border px-4 py-2">{request.gender}</td>
                 <td className="border px-4 py-2">
                   <button
                     className="bg-green-500 text-white px-4 py-2 rounded-md mr-2"
