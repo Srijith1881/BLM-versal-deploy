@@ -5,6 +5,7 @@ import Employeelogin from "./components/Employeelogin";
 import Patientlogin from "./components/Patientlogin";
 import Patientdashboard from"./pages/Patientdashboard";
 import Employeedashboard from"./pages/Employeedashboard";
+import Test from "./pages/Test";
 
 const App=() => {
 
@@ -14,6 +15,7 @@ const App=() => {
       <Routes>
         <Route element={<Weblayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/test" element={<Test />} />
           <Route path="/employeelogin" element={<Employeelogin />} />
           <Route path="/patientlogin" element={<Patientlogin />} />
           <Route path="/patientdashboard" element={<Patientdashboard />} />
