@@ -26,33 +26,33 @@ const Employeedashboard = () => {
   }, []);
 
   // accepting a blood request
-  const handleAccept = (id, bloodGroup) => {
-    if (bloodInventory[bloodGroup] > 0) {
-      setBloodInventory((prevInventory) => ({
-        ...prevInventory,
-        [bloodGroup]: prevInventory[bloodGroup] - 1,
-      }));
+  // const handleAccept = (id, bloodGroup) => {
+  //   if (bloodInventory[bloodGroup] > 0) {
+  //     setBloodInventory((prevInventory) => ({
+  //       ...prevInventory,
+  //       [bloodGroup]: prevInventory[bloodGroup] - 1,
+  //     }));
 
-      axios.put(`http://localhost:3333/api/update/${id}`, { status: 'accepted' }) 
-        .then(() => {
-          console.log(`Request ${id} accepted.`);
-          setRequests(requests.filter(request => request._id !== id));
-        })
-        .catch((error) => console.error('Error accepting request:', error));
-    } else {
-      alert(`No more units available for blood group ${bloodGroup}`);
-    }
-  };
+  //     axios.put(`http://localhost:3333/api/update/${id}`, { status: 'accepted' }) 
+  //       .then(() => {
+  //         console.log(`Request ${id} accepted.`);
+  //         setRequests(requests.filter(request => request._id !== id));
+  //       })
+  //       .catch((error) => console.error('Error accepting request:', error));
+  //   } else {
+  //     alert(`No more units available for blood group ${bloodGroup}`);
+  //   }
+  // };
 
-  // Function to handle rejecting a blood request
-  const handleReject = (id) => {
-    axios.put(`http://localhost:3333/api/update/${id}`, { status: 'rejected' }) 
-      .then(() => {
-        console.log(`Request ${id} rejected.`);
-        setRequests(requests.filter(request => request._id !== id));
-      })
-      .catch((error) => console.error('Error rejecting request:', error));
-  };
+  // // Function to handle rejecting a blood request
+  // const handleReject = (id) => {
+  //   axios.put(`http://localhost:3333/api/update/${id}`, { status: 'rejected' }) 
+  //     .then(() => {
+  //       console.log(`Request ${id} rejected.`);
+  //       setRequests(requests.filter(request => request._id !== id));
+  //     })
+  //     .catch((error) => console.error('Error rejecting request:', error));
+  // };
 
   return (
     <div className="min-h-screen w-screen bg-white p-6">
@@ -95,13 +95,13 @@ const Employeedashboard = () => {
                 <td className="border px-4 py-2">
                   <button
                     className="bg-green-500 text-white px-4 py-2 rounded-md mr-2"
-                    onClick={() => handleAccept(request._id, request.bloodGroup)}
+                    // onClick={() => handleAccept(request._id, request.bloodGroup)}
                   >
                     Accept
                   </button>
                   <button
                     className="bg-red-500 text-white px-4 py-2 rounded-md"
-                    onClick={() => handleReject(request._id)}
+                    // onClick={() => handleReject(request._id)}
                   >
                     Reject
                   </button>
