@@ -14,18 +14,18 @@ const Employeedashboard = () => {
     'O-': 7,
   });
 
-  // Fetch requests from the mock API
+    
   useEffect(() => {
     axios
-      .get('http://localhost:3333/api/blood-request') // Replace with your actual API endpoint
+      .get('https://blood-report-server.onrender.com')
       .then((response) => {
-        console.log('Data fetched:', response.data.patients); // Ensure data structure is correct
-        setRequests(response.data.patients); // Assuming the response structure is { patients: [...] }
+        console.log('Data fetched:', response.data.patients); 
+        setRequests(response.data.patients);
       })
       .catch((error) => console.error('Error fetching requests:', error));
   }, []);
 
-  // Function to handle accepting a blood request
+  // accepting a blood request
   const handleAccept = (id, bloodGroup) => {
     if (bloodInventory[bloodGroup] > 0) {
       setBloodInventory((prevInventory) => ({
@@ -33,7 +33,7 @@ const Employeedashboard = () => {
         [bloodGroup]: prevInventory[bloodGroup] - 1,
       }));
 
-      axios.put(`http://localhost:3333/api/update/${id}`, { status: 'accepted' }) // Mock API call
+      axios.put(`http://localhost:3333/api/update/${id}`, { status: 'accepted' }) 
         .then(() => {
           console.log(`Request ${id} accepted.`);
           setRequests(requests.filter(request => request._id !== id));
@@ -44,9 +44,9 @@ const Employeedashboard = () => {
     }
   };
 
-  // Function to handle rejecting a blood request
+  // rejecting a blood request
   const handleReject = (id) => {
-    axios.put(`http://localhost:3333/api/update/${id}`, { status: 'rejected' }) // Mock API call
+    axios.put(`http://localhost:3333/api/update/${id}`, { status: 'rejected' }) 
       .then(() => {
         console.log(`Request ${id} rejected.`);
         setRequests(requests.filter(request => request._id !== id));

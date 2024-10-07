@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/api/blood-request');
+        const response = await axios.get('https://blood-report-server.onrender.com');
         setData(response.data);
       } catch (err) {
         setError(err.message);

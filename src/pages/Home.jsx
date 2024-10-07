@@ -15,9 +15,12 @@ const Home = () => {
                     <button className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition duration-300">
                         Donate Now
                     </button>
-                    <button className="bg-gray-300 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-400 transition duration-300">
-                        Learn More
-                    </button>
+                    <a href="https://www.kokilabenhospital.com/blog/world-blood-donor-day/" target="_blank" rel="noopener noreferrer">
+                        <button className="bg-gray-300 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-400 transition duration-300">
+                            Learn More
+                        </button>
+                    </a>
+
                 </div>
             </div>
 
